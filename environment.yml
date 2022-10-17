@@ -1,0 +1,13 @@
+name: sql-einsum
+dependencies:
+- python==3.8
+- pip==21.1.2
+- pandas==1.4.2                     # for reading the datasets
+- pip:
+  - numpy==1.21.1
+  - opt_einsum==3.3.0
+  - tableauhyperapi==0.0.13287      # for HyPer
+  - psycopg2==2.9.3                 # for PostgreSQL
+  - rdflib==6.2.0                   # for asking queries on the RDF data set
+  - python-sat==0.1.7.dev19         # for solving the SAT problem with a standard solver
+  - sqlite==3.33.0                  # for SQLite
