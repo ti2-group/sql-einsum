@@ -17,4 +17,4 @@ python qc_sqlite.py
 ````
 
 Each file returns the result of the computation and the computation time without planning. 
-The data base management systems also compuate the planning time for the sql query.
+The data base management systems also compute the planning time for the sql query.
