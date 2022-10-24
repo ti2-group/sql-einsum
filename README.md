@@ -5,7 +5,9 @@
 ````
 .
 ├── case_study                 # Stand alone files for some case studies of the paper 
-│   └── discussion             # Stand alone files for the discussion section
+│   ├── discussion             # Stand alone files for the discussion section
+│   ├── graphical_models       # Stand alone files for the graphical model experiments
+│   └── quantum_circuits       # Stand alone files for the quantum circuits experiments
 └── experiments                # Experimental files to reproduce the results of the paper
 ````
 
