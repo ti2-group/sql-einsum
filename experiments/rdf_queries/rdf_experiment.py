@@ -103,6 +103,9 @@ def error_check(sql_result, rdf_result, meta_info):
 
 
 def run_rdf_experiment(verbose=False, iterations=10):
+    if not os.path.exists(os.path.join("rdf_queries", "olympics.nt")):
+        print("""Before starting the rdf experiment you have to unzip the file 'olympics-nt-nodup.zip'.\nSKIP RDF EXPERIMENT""")
+        return None
 
     graph = parse_graph(os.path.join("rdf_queries", "olympics.nt"), verbose=verbose)
     tripel_list, meta_info = get_tripel_from_graph(graph, verbose=verbose)
