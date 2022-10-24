@@ -19,13 +19,12 @@ path_info = [((11, 9), {'j'}, 'lj,jh->lh', None, 'GEMM'), ((3, 1), {'b'}, 'db,b-
 path = [i[0] for i in path_info]
 
 
-# opt_einsum computation
 def opt_einsum_discussion():
     tic = timer()
     oe_result = oe.contract(einsum_notation, T0, T0, T1, T1, T2, T2, T2, T1, T1, T3, T3, T3, T1, T2, T2, T3, T2, T1, T1,
                             T1, T2, T3, T2, T3, T3, T3, T2, T2, T1, T3, T1, T2, T3, T1, T2, T3, T2, T1, optimize = path)
     toc = timer()
-    print(f"opt_einsum result: {oe_result} (computated in {toc - tic}s)")
+    print(f"opt_einsum result: {oe_result}\n(computated in {toc - tic}s)")
     return toc - tic
 
 

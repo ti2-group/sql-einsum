@@ -37,7 +37,6 @@ path_info = [((1, 0), {'c'}, 'dcb,dcb->db', None, False), ((2, 1), {'f'}, 'gfe,g
 path = [i[0] for i in path_info]
 
 
-# opt_einsum computation
 def opt_einsum_discussion():
     tic = timer()
     oe_result = oe.contract(einsum_notation, E12, E11, E0, E12, E11, E0, E12, E11, E0, E12, E11, E0, E12, E11, E0, E12, E11,
@@ -86,7 +85,7 @@ def opt_einsum_discussion():
                             E4, E4, E4, E4, E4, E4, E4, E4, E5, E4, E4, E5, E4, E4, E4, E4, E4, E4, E4, E4, E4, E4,
                             optimize=path)
     toc = timer()
-    print(f"opt_einsum result: {oe_result} (computated in {toc-tic}s)")
+    print(f"opt_einsum result: {oe_result}\n(computated in {toc-tic}s)")
     return toc - tic
 
 

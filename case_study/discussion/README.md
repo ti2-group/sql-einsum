@@ -11,9 +11,10 @@ See [requirements](../README.md#Requirements) of the whole repository.
 The repository contains multiple files, that all can run stand alone. 
 You can run the Python file with 
 ````commandline
-python qc_sqlite.py
+>>> python qc_sqlite.py
+sqlite result: [(3.6969306313365856e+26,)]
+(computated in 1.1461116s) - planning time: 0.1041782s
 
-    sqlite result: [(3.6969306313365856e+26,)] (computated in 1.1360257999999999s) - planning time: 0.1073153s
 ````
 
 Each file returns the result of the computation and the computation time without planning. 
