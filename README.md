@@ -6,7 +6,8 @@
 .
 ├── case_study                 # Stand alone files for some case studies of the paper 
 │   └── discussion             # Stand alone files for the discussion section
-└── experiments                # Experimental files to reproduce the results of the paper
+├── experiments                # Experimental files to reproduce the results of the paper
+└── generate_sql_code          # Stand alone file for generating sql-code
 ````
 
 __See each folder for more information.__

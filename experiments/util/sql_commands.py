@@ -347,6 +347,17 @@ def _einsum_notation_to_opt_sql(einsum_notation, tensor_names, evidence, order_b
 
 def sql_einsum_query(einsum_notation, tensor_names, evidence, further_tensors=None,
                      path_info=None, order_by=True, complex=False):
+    """
+    Generates SQL-code for an einstein notation string
+    :param einsum_notation: string representation of the einstein notation (example "ab,b->a")
+    :param tensor_names: list of arguments of the einstein notation (example ["A", "B"])
+    :param evidence: dictionary containing the data to the tensor_names
+    :param further_tensors: dictionary of additional tensors, that values are not part of the query
+    :param path_info: contraction list, this is optional and can set to a given list, like from opt_einsum
+    :param order_by: boolean, if set to False the order by clause is removed
+    :param complex: boolean, if set to True complex numbers can be used
+    :return: string representing the sql-code
+    """
     if complex:
         tensor_definitions = var_list_to_sql(evidence)
         contraction = _einsum_notation_to_opt_sql(einsum_notation, tensor_names, evidence, complex=True, path_info=path_info)
