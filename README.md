@@ -34,11 +34,11 @@ All packages can be installed using Anaconda and the yaml file with
  
 after this the environment is activated with
 
-`conda activate exql`
+`conda activate sql-einstein`
 
 and can be deleted with 
 
-`conda env remove -n exql`.
+`conda env remove -n sql-einstein`.
 
 ### Postgres
 The experiments further need a postgres DBMS installation. We used psql version 12.7. You can install postgres on linux using
