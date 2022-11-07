@@ -303,12 +303,9 @@ def _einsum_notation_to_opt_sql(einsum_notation, tensor_names, evidence, order_b
 
     # we do not want an actual computation, so we create a view of the problem
     if len(einsum_notation.split(",")) > 10:
-        len(einsum_notation.split(","))
+        opt_rg = oe.DynamicProgramming()
     else:
-        if len(einsum_notation.split(",")) > 200:
-            opt_rg = oe.RandomGreedy(max_repeats=256, parallel=True)
-        else:
-            opt_rg = oe.RandomGreedy(max_repeats=256)
+        opt_rg = oe.RandomGreedy(max_repeats=256)
 
     opt_rg = oe.DynamicProgramming()
 
