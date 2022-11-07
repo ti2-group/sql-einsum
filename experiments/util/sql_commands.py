@@ -302,7 +302,11 @@ def _einsum_notation_to_opt_sql(einsum_notation, tensor_names, evidence, order_b
     index_sizes = _get_sizes(einsum_notation, tensor_names, evidence)
 
     # we do not want an actual computation, so we create a view of the problem
-    opt_rg = oe.RandomGreedy(max_repeats=256, parallel=True)
+    if len(einsum_notation.split(",")) > 10:
+        opt_rg = oe.DynamicProgramming()
+    else:
+        opt_rg = oe.RandomGreedy(max_repeats=256)
+
     views = oe.helpers.build_views(einsum_notation, index_sizes)
     if path_info is None:
         path_info = oe.contract_path(einsum_notation, *views, optimize=opt_rg)[1]
