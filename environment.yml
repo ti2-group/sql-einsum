@@ -10,4 +10,3 @@ dependencies:
   - psycopg2==2.9.3                 # for PostgreSQL
   - rdflib==6.2.0                   # for asking queries on the RDF data set
   - python-sat==0.1.7.dev19         # for solving the SAT problem with a standard solver
-  - sqlite==3.33.0                  # for SQLite
