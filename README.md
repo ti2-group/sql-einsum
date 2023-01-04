@@ -15,6 +15,7 @@
 __See each folder for more information.__
 
 ## Requirements
+_For a docker setup see below._
 ### Python and Anaconda
 All files were tested using Python version 3.8 and Anaconda version 4.9.2  
 
@@ -52,3 +53,33 @@ database with the following configuaration:
 * user: 'postgres',
 * password: 'password',
 * host: 'localhost'.
+
+## Docker Setup
+We also support a docker setup. A `Dockerfile` is available and can be build with
+````commandline
+docker build -t sql-einstein .
+````
+After building you can run the docker container with
+````commandline
+docker run --rm --entrypoint=startup.sh -it sql-einstein
+````
+This command removes (`--rm`) the container after execution. Also it runs the script `startup.sh` as an entrypoint. This script
+does start the postgres server.
+
+After running the `docker run ...` command you will be prompted with an interactive shell 
+where you can run experiments as described in each subfolder. 
+For a quickstart you can run 
+
+````commandline
+cd experiments
+python run_experiments
+````
+
+to start all experiments or
+
+````commandline
+cd case_study/quantum_circuits
+python qc_sqlite.py
+````
+
+to start the quantum circuit sqlite experiment.
