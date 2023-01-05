@@ -53,9 +53,8 @@ def quantum_use_case(depth=-1, nbits=-1, iterations=10, verbose=False):
     results = dict()
 
     for file in sorted(os.listdir(os.path.join("quantum_circuits", "circuits"))):
-        data = pickle.load(open(os.path.join("quantum_circuits", "circuits", file), "rb"))
-        einstein = data["einstein"]
-        tensors = data["tensors"]
+        if file.endswith(".pdf") or file.endswith(".png"):
+            continue
         depth_c = int(file.split("_")[1])
         nbits_c = int(file.split("_")[2])
 
@@ -63,6 +62,10 @@ def quantum_use_case(depth=-1, nbits=-1, iterations=10, verbose=False):
             continue
         if nbits_c != nbits and nbits != -1:
             continue
+
+        data = pickle.load(open(os.path.join("quantum_circuits", "circuits", file), "rb"))
+        einstein = data["einstein"]
+        tensors = data["tensors"]
 
         print("Tensors:", len(tensors))
         print("Number Operations:", len(einstein.split(",")))
@@ -80,7 +83,10 @@ def quantum_use_case(depth=-1, nbits=-1, iterations=10, verbose=False):
 
         print(times)
 
-        results[nbits_c] = times
+        if depth != -1:
+            results[nbits_c] = times
+        else:
+            results[depth_c] = times
 
         print_as_csv(results)
 
