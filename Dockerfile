@@ -37,11 +37,15 @@ COPY . .
 USER root
 RUN apk add unzip --no-cache
 RUN unzip experiments/rdf_queries/olympics-nt-nodup.zip -d experiments/rdf_queries/
+
+# create entrypoint file
 RUN touch /usr/bin/startup.sh
 RUN echo "#!/bin/sh" >> /usr/bin/startup.sh
 RUN echo "su - postgres -c 'pg_ctl start -D /var/lib/postgresql/data/'" >> /usr/bin/startup.sh
 RUN echo "export PYTHONPATH='$PWD'" >> /usr/bin/startup.sh
 RUN echo "sh" >> /usr/bin/startup.sh
 RUN chmod +x /usr/bin/startup.sh
+
+ENTRYPOINT /usr/bin/startup.sh
 
 RUN export PYTHONPATH="$PWD"
