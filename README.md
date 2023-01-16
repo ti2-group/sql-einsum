@@ -61,7 +61,7 @@ docker build -t sql-einstein .
 ````
 After building you can run the docker container with
 ````commandline
-docker run --rm --entrypoint=startup.sh -it sql-einstein
+docker run --rm -it sql-einstein
 ````
 This command removes (`--rm`) the container after execution. Also it runs the script `startup.sh` as an entrypoint. This script
 does start the postgres server.
