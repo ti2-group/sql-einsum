@@ -4,7 +4,7 @@
 This folder contains stand alone files to run the computation for the discussion section for each data base management system and `opt_einsum` 
 individually. The einstein notation compuates the number of soluations of a conjugation normal form with 952 clauses.
 
-Interestingly the computation time in hyper is more performant then in python. This can be explained through the intermediate computations that are performed by the einstein summation. `sat_intermediate_calculations.txt` shows, that for those intermediate computations the high dimensional intermediate results are quite sparse. 
+Interestingly the computation in HyPer is more performant then in Python. This can be explained through the intermediate computations that are performed by the einstein summation. `sat_intermediate_calculations.txt` shows, that for those intermediate computations the high dimensional intermediate results are quite sparse. 
  
 For example the following excerpt shows this behavior. The left operatnd has around 1 to 3 percent of non zero values (nnz = number non zero).
 
