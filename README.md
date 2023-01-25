@@ -1,5 +1,7 @@
 # Supplement for the paper - Efficient and Portable Einstein Summation in SQL
 
+You will find information about our group and other projects at [ti2.uni-jena.de](https://ti2.uni-jena.de/)
+
 ## Structure of the Repository
 
 ````
@@ -24,7 +26,6 @@ Further we require the following Python packages.
 * pandas (version 1.4.2)
 * tableauhyperapi (version 0.0.13287)
 * psycopg2 (version 2.9.3)
-* sqlite (version 3.33.0)
 * opt_einsum (version 3.3.0)
 * rdflib (version 6.2.0)
 * python-sat (version 0.1.7.dev19)
