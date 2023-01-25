@@ -2,7 +2,7 @@
 
 You will find information about our group and other projects at [ti2.uni-jena.de](https://ti2.uni-jena.de/). 
 
-If you are not familiar with einstein summation, good entrypoints are the article [Einstein Summation in NumPy](https://obilaniu6266h16.wordpress.com/2016/02/04/einstein-summation-in-numpy/) or [Einsum](https://rockt.github.io/2018/04/30/einsum).
+If you are not familiar with einstein summation, good entrypoints are the article [Einstein Summation in NumPy](https://obilaniu6266h16.wordpress.com/2016/02/04/einstein-summation-in-numpy/) or [Einsum is all you Need - Einstein Summation in Deep Learning](https://rockt.github.io/2018/04/30/einsum).
 
 ## Structure of the Repository
 
